@@ -3,7 +3,8 @@
         <div class="container_main">
             <div class="w-80" id="different_style">
                 <div class="container_heading">
-                    <span class="cards_found_count">Found <span class="found_number">00</span> cards</span>
+                    <span class="cards_found_count">Found <span class="found_number">{{ store.arrayCards.length }}</span>
+                        cards</span>
                 </div>
                 <div class="container_cards">
                     <CardGame />
@@ -14,6 +15,8 @@
 </template>
 
 <script>
+import { store } from "../store";
+
 import CardGame from "./CardGame.vue"
 
 export default {
@@ -21,6 +24,11 @@ export default {
     components: {
         CardGame,
     },
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
@@ -59,5 +67,15 @@ export default {
         gap: 1em;
         grid-template-columns: repeat(5, 1fr);
         text-align: center;
+
+        @media screen and (max-width: 1240px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media screen and (max-width: 770px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: 550px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 }</style>
