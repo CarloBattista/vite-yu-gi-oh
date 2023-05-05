@@ -20,8 +20,8 @@ body {
 body {
     font-family: "Poppins", sans-serif;
     background: #fff;
-    background: grey;
-    color: #000;
+    background: #121212; // Temporaneo
+    color: #fff;
     -webkit-font-smoothing: antialiased;
     user-select: none;
 }
@@ -50,4 +50,9 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
+}
+
+.w-80{
+    width: 80%;
+    margin: 0 auto;
 }
