@@ -1,12 +1,14 @@
 <script>
 import HeaderComp from "./components/HeaderComp.vue"
 import TypeSelector from "./components/TypeSelector.vue"
+import MainComp from "./components/MainComp.vue"
 
 export default {
   name: "App",
   components: {
     HeaderComp,
     TypeSelector,
+    MainComp,
   }
 }
 </script>
@@ -14,6 +16,7 @@ export default {
 <template>
   <HeaderComp/>
   <TypeSelector/>
+  <MainComp/>
 </template>
 
 <style lang="scss">
