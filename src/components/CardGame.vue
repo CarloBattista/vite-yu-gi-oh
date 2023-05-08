@@ -7,7 +7,7 @@ export default {
 
     data() {
         return {
-            store
+            store,
         }
     },
 }
@@ -56,4 +56,5 @@ export default {
             font-weight: 400;
         }
     }
-}</style>
+}
+</style>

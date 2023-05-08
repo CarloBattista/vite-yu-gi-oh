@@ -3,8 +3,8 @@
         <div class="container_selector">
             <div class="w-80">
                 <div class="sl_container">
-                    <select class="select_type" name="selectType" id="">
-                        <option value="0" selected>Alien</option>
+                    <select @change="$emit('callApiCard')" v-model="this.store.nomeArchetype" class="select_type" name="selectType">
+                        <option v-for="(element, index) in this.store.arrayType" :key="index" :value="element.archetype_name">{{ element.archetype_name }}</option>
                     </select>
                     <div class="icon_arrow">
                         <i class="fa-solid fa-caret-down"></i>
@@ -16,19 +16,28 @@
 </template>
 
 <script>
-    export default {
-        name: "TypeSelector",
-    }
+import { store } from "../store"
+
+export default {
+    name: "TypeSelector",
+    data() {
+        return {
+            store
+        }
+    },
+}
 </script>
 
 <style lang="scss" scoped>
-.container_selector{
+.container_selector {
     widows: 100%;
     padding: 60px 0;
-    .sl_container{
+
+    .sl_container {
         position: relative;
         display: inline-block;
-        .select_type{
+
+        .select_type {
             position: relative;
             appearance: none;
             width: 200px;
@@ -40,7 +49,8 @@
             outline: none;
             cursor: pointer;
         }
-        .icon_arrow{
+
+        .icon_arrow {
             position: absolute;
             top: 0;
             right: 0;
@@ -50,7 +60,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            .fa-caret-down{
+
+            .fa-caret-down {
                 color: #000;
                 font-size: 1rem;
             }
