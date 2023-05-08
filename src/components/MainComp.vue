@@ -4,8 +4,8 @@
             <div class="w-80" id="different_style">
                 <div class="container_heading">
                     <span class="cards_found_count" v-if="store.arrayCards.length == 0"><b>Non ci sono carte!</b> Seleziona un Archetipo tramite la Select sopra.</span>
-                    <span class="cards_found_count" v-if="store.arrayCards.length == 1">Ho trovato <span class="found_number">{{ store.arrayCards.length }}</span> carta</span>
-                    <span class="cards_found_count" v-else>Ho trovato <span class="found_number">{{ store.arrayCards.length }}</span> carte</span>
+                    <span class="cards_found_count" v-else-if="store.arrayCards.length == 1">Ho trovato <span class="found_number">{{ store.arrayCards.length }}</span> carta</span>
+                    <span class="cards_found_count" v-if="store.arrayCards.length >= 2">Ho trovato <span class="found_number">{{ store.arrayCards.length }}</span> carte</span>
                 </div>
                 <div class="container_cards">
                     <CardGame />
